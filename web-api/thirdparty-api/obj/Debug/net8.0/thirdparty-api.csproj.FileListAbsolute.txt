@@ -1,0 +1,12 @@
+C:\Personal\Projects\rockwool_assessment\web-api\thirdparty-api\bin\Debug\net8.0\thirdparty-api.deps.json
+C:\Personal\Projects\rockwool_assessment\web-api\thirdparty-api\bin\Debug\net8.0\thirdparty-api.dll
+C:\Personal\Projects\rockwool_assessment\web-api\thirdparty-api\bin\Debug\net8.0\thirdparty-api.pdb
+C:\Personal\Projects\rockwool_assessment\web-api\thirdparty-api\obj\Debug\net8.0\thirdparty-api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Personal\Projects\rockwool_assessment\web-api\thirdparty-api\obj\Debug\net8.0\thirdparty-api.AssemblyInfoInputs.cache
+C:\Personal\Projects\rockwool_assessment\web-api\thirdparty-api\obj\Debug\net8.0\thirdparty-api.AssemblyInfo.cs
+C:\Personal\Projects\rockwool_assessment\web-api\thirdparty-api\obj\Debug\net8.0\thirdparty-api.csproj.CoreCompileInputs.cache
+C:\Personal\Projects\rockwool_assessment\web-api\thirdparty-api\obj\Debug\net8.0\thirdparty-api.sourcelink.json
+C:\Personal\Projects\rockwool_assessment\web-api\thirdparty-api\obj\Debug\net8.0\thirdparty-api.dll
+C:\Personal\Projects\rockwool_assessment\web-api\thirdparty-api\obj\Debug\net8.0\refint\thirdparty-api.dll
+C:\Personal\Projects\rockwool_assessment\web-api\thirdparty-api\obj\Debug\net8.0\thirdparty-api.pdb
+C:\Personal\Projects\rockwool_assessment\web-api\thirdparty-api\obj\Debug\net8.0\ref\thirdparty-api.dll

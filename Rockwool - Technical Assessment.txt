@@ -1,0 +1,39 @@
+Project Brief
+Your assignment is to design and develop a single-page application with React as frontend and .Net 6/8, C# as backend for a news blog. The core functionality of the application should include:
+
+Frontend - React v18
+•	A search bar for users to enter a news title
+•	A button to execute the search
+•	A list table to display the search results, which should consist of three news records per page and the list support pagination.
+•	Execute an API call to .Net backend API and fetch data asynchronously.
+•	Limiting the display text (30 characters) of the news title on the list table, ending with '...'
+•	A popup that displays the full news article when a news item is clicked
+
+Backend - .Net 6/8, C#
+•	Create the .Net C# backend web api to call third party API (https://newsdata.io). 
+•	You will need to create a free account (limited to 200 calls per day) here: https://newsdata.io/search-news. Use the API key from your account, and fill up the parameter 'languague=en' and 'q' with the value pass from the frontend's search bar.
+•	Please refer https://newsdata.io/documentation for more information.
+•	Return the data from third party API to frontend in JSON format.
+
+
+Prerequisites:
+You will need a basic understanding of React, including:
+•	Fundamental React concepts such as:
+	o	Creating components (preferably functional components)
+	o	Managing props and state
+	o	Implementing lifecycle methods
+•	Implementing at least one React Hook, for instance, useState
+•	Basics of API calls, including:
+	o	Handling asynchronous calls
+	o	Working with JSON data formats
+•	React Routing for opening a dedicated post page
+
+Source Code
+Push your code to Github. 
+Please make sure you’re not pushing everything in a single commit, but having small atomic steps. Commit
+clean project ignoring binaries and unnecessary resources.
+
+Time frame
+Complete and submit by 05th Feb 2024 at 12:00pm.
+
+Should there is any technical question after going through the test assignment, you're advise to make up own assumption and write them at the ReadMe.md or release note. 
