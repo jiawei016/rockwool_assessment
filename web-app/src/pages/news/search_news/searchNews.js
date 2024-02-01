@@ -1,16 +1,20 @@
 import React, { useRef } from "react";
 import {DefaultInputText, DefaultLabel, DefaultButtonSubmit} from '../../../frameworks/ui_elements/index';
 import {RefValidation} from '../../../frameworks/validate/refValidation';
-
 import styles from '../index.module.css';
+
+import {ApiNewsService} from '../../../services/apiNewsService';
 
 export const SearchNewsPage = () => {
   const ref_Search = useRef();
 
   const onSearchEvent =() => {
-    console.log('onSearchEvent');
-    if(RefValidation(ref_Search) === true){
-
+    let param = [];
+    if(RefValidation(ref_Search) === true) {
+        param.push(ref_Search.current.value);
+        ApiNewsService(param).subscribe(data => {
+            console.log(data);
+        });
     }
     else{
         ref_Search.current.focus();
@@ -26,7 +30,7 @@ export const SearchNewsPage = () => {
             <DefaultInputText input_name={"searchTitle"} input_type={"text"} reference={ref_Search} />
             <DefaultButtonSubmit button_text={"Search"} button_clickEvent={() => onSearchEvent()}/>
         </div>
-        
+
 
     </>
   );

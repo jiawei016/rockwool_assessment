@@ -16,17 +16,10 @@ namespace web_api.Controllers
             _newsRepo = serviceProvider.GetRequiredService<INewsRepo>();
         }
 
-        [HttpPost]
+        [HttpGet]
         public async Task<IActionResult> Search(string newsTitle)
         {
             NewsDataAPIModel searchResponse = await _newsRepo.searchNews(newsTitle);
-            return Ok(searchResponse);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> SearchByPagination(string newsTitle, int pageNumber)
-        {
-            NewsDataAPIModel searchResponse = await _newsRepo.SearchByPagination(newsTitle, pageNumber);
             return Ok(searchResponse);
         }
     }
