@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --theme-input-border-color: #7c86e6;
+  --theme-input-background-color: #dcdff7;
+
+  --theme-button-background-color: #1e2036;
+  --theme-button-border-color: #dcdff7;
+}

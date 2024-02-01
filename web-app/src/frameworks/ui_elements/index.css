@@ -1,0 +1,9 @@
+.defaultInput {
+    border-color: var(--theme-input-border-color);
+    background-color: var(--theme-input-background-color);
+}
+
+.defaultButton {
+    border-color: var(--theme-button-border-color);
+    background-color: var(--theme-button-background-color);
+}
