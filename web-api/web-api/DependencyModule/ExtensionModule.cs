@@ -1,16 +1,19 @@
-﻿using Autofac;
-using Microsoft.Extensions.Configuration;
-using System.Data.SqlClient;
-using System.Data;
+﻿using Microsoft.AspNetCore.Mvc;
+using Serilog;
+using Serilog.Events;
 using web_api.Extensions.Dapper;
+using web_api.Extensions.Process;
+using web_api.Extensions.Redis;
 
 namespace web_api.DependencyModule
 {
-    public class ExtensionModule : Module
+    public class ExtensionModule
     {
-        protected override void Load(ContainerBuilder builder)
+        public void ConfigureServices(IServiceCollection services)
         {
-            builder.RegisterType<DapperHelper>().SingleInstance();
+            services.AddScoped<DapperHelper>();
+            services.AddScoped<RedisHelper>();
+            services.AddScoped<ProcessHelper>();
         }
     }
 }

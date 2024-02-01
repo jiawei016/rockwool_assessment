@@ -1,14 +1,16 @@
-﻿using Autofac;
-using thirdparty_api;
+﻿using thirdparty_api;
+using web_api.Extensions.Dapper;
+using web_api.Extensions.Process;
+using web_api.Extensions.Redis;
 using web_api.Repository.Interfaces;
 
 namespace web_api.DependencyModule
 {
-    public class OtherAPIModule : Module
+    public class OtherAPIModule
     {
-        protected override void Load(ContainerBuilder builder)
+        public void ConfigureServices(IServiceCollection services)
         {
-            builder.RegisterType<NewsAPI>().SingleInstance();
+            services.AddSingleton<NewsAPI>();
         }
     }
 }

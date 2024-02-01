@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Transactions;
 using thirdparty_api;
 
-namespace web_api.Extensions.Dapper
+namespace web_api.Extensions
 {
     public class UnitOfWork
     {
@@ -42,6 +42,12 @@ namespace web_api.Extensions.Dapper
         public void Rollback()
         {
             _transaction.Rollback();
+            _connection.Dispose();
+            _transaction.Dispose();
+        }
+
+        public void Dispose()
+        {
             _connection.Dispose();
             _transaction.Dispose();
         }

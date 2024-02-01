@@ -1,15 +1,14 @@
-﻿using Autofac;
-using Autofac.Core;
+﻿using thirdparty_api;
 using web_api.Repository;
 using web_api.Repository.Interfaces;
 
 namespace web_api.DependencyModule
 {
-    public class RepoModule : Module
+    public class RepoModule
     {
-        protected override void Load(ContainerBuilder builder)
+        public void ConfigureServices(IServiceCollection services)
         {
-            builder.RegisterType<NewsRepo>().As<INewsRepo>().SingleInstance();
+            services.AddScoped<INewsRepo, NewsRepo>();
         }
     }
 }

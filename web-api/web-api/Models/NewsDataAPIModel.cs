@@ -4,7 +4,7 @@
     {
         public string status { get; set; } = "";
         public long totalResults { get; set; } = 0;
-        public Results results { get; set; } = new Results();
+        public List<Results> results { get; set; } = new List<Results>();
 
         public class Results
         {

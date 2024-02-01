@@ -1,16 +1,19 @@
 ﻿using Dapper;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using System.Data;
-using System.Data.Common;
-using System.Data.SqlClient;
-using System.Transactions;
+using web_api.Extensions.Process;
 
 namespace web_api.Extensions.Dapper
 {
     public class DapperHelper
     {
-        public async Task ExecuteAsync(string storedProcedure, UnitOfWork unitOfWork, Dictionary<string, string> param)
+        private readonly Serilog.ILogger _logger;
+        private readonly ProcessHelper _processHelper;
+        public DapperHelper(IServiceProvider serviceProvider)
+        {
+            _logger = serviceProvider.GetRequiredService<Serilog.ILogger>();
+            _processHelper = serviceProvider.GetRequiredService<ProcessHelper>();
+        }
+        public async Task<bool> ExecuteAsync(string storedProcedure, UnitOfWork unitOfWork, Dictionary<string, string> param)
         {
             try
             {
@@ -21,10 +24,16 @@ namespace web_api.Extensions.Dapper
                 }
 
                 await unitOfWork.GetConnection().ExecuteAsync(storedProcedure, parameters, commandType: CommandType.StoredProcedure, transaction: unitOfWork.GetTransaction());
+
+                _logger.Information($"ProcessID : {_processHelper.getProcessId()} --- Write Into {storedProcedure}");
+                return true;
             }
             catch (Exception ex)
             {
+                _logger.Error($"ProcessID : {_processHelper.getProcessId()} --- SQL Error {ex.ToString()}");
                 Console.WriteLine(ex.ToString());
+
+                return false;
             }
         }
     }
