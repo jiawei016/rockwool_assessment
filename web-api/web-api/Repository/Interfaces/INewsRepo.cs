@@ -1,7 +1,9 @@
-﻿namespace web_api.Repository.Interfaces
+﻿using web_api.Models;
+
+namespace web_api.Repository.Interfaces
 {
     public interface INewsRepo
     {
-        public Task<string> searchNews(string searchTitle);
+        public Task<NewsDataAPIModel> searchNews(string searchTitle);
     }
 }

@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "web-api", "web-api.csproj", "{04633C8A-6570-4360-91FB-5CE19DBC8A16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "web-api", "web-api.csproj", "{04633C8A-6570-4360-91FB-5CE19DBC8A16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "thirdparty-api", "..\thirdparty-api\thirdparty-api.csproj", "{6C4308BA-463B-423C-8A84-33EE31DA74B1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "helper-sql", "..\SQLHelper\helper-sql.csproj", "{7DADE403-A5E4-46A5-ABDB-353FAC8B6960}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "thirdparty-api", "..\thirdparty-api\thirdparty-api.csproj", "{6C4308BA-463B-423C-8A84-33EE31DA74B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{6C4308BA-463B-423C-8A84-33EE31DA74B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C4308BA-463B-423C-8A84-33EE31DA74B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C4308BA-463B-423C-8A84-33EE31DA74B1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7DADE403-A5E4-46A5-ABDB-353FAC8B6960}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7DADE403-A5E4-46A5-ABDB-353FAC8B6960}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7DADE403-A5E4-46A5-ABDB-353FAC8B6960}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7DADE403-A5E4-46A5-ABDB-353FAC8B6960}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
