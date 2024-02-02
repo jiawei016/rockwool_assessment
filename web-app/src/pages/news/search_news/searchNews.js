@@ -4,7 +4,7 @@ import {
   DefaultLabel,
   DefaultButtonSubmit,
 } from "../../../frameworks/ui_elements/index";
-import { NewsDetail } from './Modals/index'
+import { NewsDetail } from "./Modals/index";
 import { RefValidation } from "../../../frameworks/validate/refValidation";
 import styles from "../index.module.css";
 
@@ -50,8 +50,8 @@ export const SearchNewsPage = () => {
   const onNewsDetailClickHandler = (newsObj) => {
     setNewsDetail(newsObj);
     setNewsDetailShow(true);
-  }
-  
+  };
+
   return (
     <>
       <div className={"mb-3 " + styles.Card}>
@@ -68,17 +68,17 @@ export const SearchNewsPage = () => {
         />
       </div>
 
-      {_newsState.newsData.totalResults > 0 ? (
-        <PaginationComponent
-          paginationClickEvent={(e) => onPaginationClickEvent(e)}
-          records={_newsState.newsData.totalResults}
-        />
-      ) : (
-        <></>
-      )}
+      <PaginationComponent
+        paginationClickEvent={(e) => onPaginationClickEvent(e)}
+        records={_newsState.newsData.totalResults}
+      />
 
       {_newsState.newsData.results.map((obj, index) => (
-        <div className="card mt-4 mb-4" key={"newsCard-" + index} onClick={() => onNewsDetailClickHandler(obj)}>
+        <div
+          className="card mt-4 mb-4"
+          key={"newsCard-" + index}
+          onClick={() => onNewsDetailClickHandler(obj)}
+        >
           <div className={styles.ribbon}>{obj.category[0]}</div>
           <div className="card-body">
             <h5 className={"card-title mt-3 " + styles.cardTitle}>
@@ -95,7 +95,11 @@ export const SearchNewsPage = () => {
         </div>
       ))}
 
-      <NewsDetail show={newsDetailShow} handle_close={() => setNewsDetailShow(false)} detail={newsDetail} />
+      <NewsDetail
+        show={newsDetailShow}
+        handle_close={() => setNewsDetailShow(false)}
+        detail={newsDetail}
+      />
     </>
   );
 };
