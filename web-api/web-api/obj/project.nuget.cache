@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8OWXcMIRxxpsSMGsHiYWrzG7p3SEAcTN2U+ZHif0GvcERGvkOxpBRPoAUH0PbMm8Vxi+iX1Gee55i0+2NIveGg==",
+  "dgSpecHash": "ME54uimBjvDH1vFMwfazgBEibYAxokUkgc1kJkLZWq9zh/7J1RQknxUH1QeA+jk6EEI8lsyjMWXuFTZEf68KhQ==",
   "success": true,
-  "projectFilePath": "C:\\Personal\\Projects\\rockwool_assessment\\web-api\\web-api\\web-api.csproj",
+  "projectFilePath": "C:\\Personal\\Projects\\rockwool_assessment1\\web-api\\web-api\\web-api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jerem\\.nuget\\packages\\dapper\\2.1.28\\dapper.2.1.28.nupkg.sha512",
     "C:\\Users\\jerem\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

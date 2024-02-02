@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("thirdparty-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+91e7578903b0c1aeea4bca29bb23ff84b6ecdaf3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4738f145c2e5743a7760115af7601b2b7e5c3c1b")]
 [assembly: System.Reflection.AssemblyProductAttribute("thirdparty-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("thirdparty-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
