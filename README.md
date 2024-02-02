@@ -6,6 +6,7 @@
 | Docker Desktop | Latest |
 | Node.js | v19 |
 | React | v18 |
+| .NET | 8.0 |
 
 ### commands to run if using docker
 *SQL Server Installation*
