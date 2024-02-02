@@ -1,0 +1,12 @@
+{
+    "env":{
+        "current": {
+            "apiEndPoint": "http://localhost:5228/api/v1/",
+            "appVersion": "v1"
+        },
+        "localhost":{
+            "apiEndPoint": "http://localhost:5228/api/v1/",
+            "appVersion": "v1"
+        }
+    }
+}

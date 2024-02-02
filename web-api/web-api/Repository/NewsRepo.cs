@@ -19,12 +19,92 @@ namespace web_api.Repository
         private readonly DapperHelper _dapperHelper;
         private readonly RedisHelper _redisHelper;
         private readonly IConfiguration _configuration;
+        private readonly int RowsPerPage = 3;
         public NewsRepo(IServiceProvider serviceProvider) 
         {
             _newsAPI = serviceProvider.GetRequiredService<NewsAPI>();
             _dapperHelper = serviceProvider.GetRequiredService<DapperHelper>();
             _redisHelper = serviceProvider.GetRequiredService<RedisHelper>();
             _configuration = serviceProvider.GetRequiredService<IConfiguration>();
+        }
+
+        public async Task<NewsDataAPIModel> searchByPagination(string searchTitle, int pageNumber)
+        {
+            NewsDataAPIModel newsDataAPIModel = new NewsDataAPIModel();
+            try
+            {
+                UnitOfWork unitOfWork = new UnitOfWork(_configuration);
+                unitOfWork.OpenConnection();
+
+                try
+                {
+                    string cache = await _redisHelper.GetValueAsync(searchTitle);
+                    if (cache == null)
+                    {
+                        string response = await _newsAPI.searchNews(searchTitle);
+                        newsDataAPIModel = JsonConvert.DeserializeObject<NewsDataAPIModel>(response);
+                        newsDataAPIModel.totalResults = newsDataAPIModel.results.Count;
+                        response = JsonConvert.SerializeObject(newsDataAPIModel);
+
+                        bool dapperStatus = await saveToDB(searchTitle, unitOfWork);
+                        if (!dapperStatus)
+                        {
+                            throw new Exception("Write to Db Error");
+                        }
+
+                        bool redisStatus = await _redisHelper.SaveValueAsync(searchTitle, response);
+                        if (!redisStatus)
+                        {
+                            throw new Exception("Write to redis Error");
+                        }
+                    }
+                    else
+                    {
+                        newsDataAPIModel = JsonConvert.DeserializeObject<NewsDataAPIModel>(cache);
+                    }
+                }
+                catch
+                {
+                    unitOfWork.Rollback();
+
+                    throw;
+                }
+
+                unitOfWork.Commit();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+
+            if (newsDataAPIModel.totalResults > 0)
+            {
+                List<NewsDataAPIModel.Results> _results = new List<NewsDataAPIModel.Results>();
+                int indexTakeFrom = 0;
+                int indexTakeTo = 0;
+                if (pageNumber == 1)
+                {
+                    indexTakeFrom = 0;
+                    indexTakeTo = (indexTakeFrom + RowsPerPage) - 1;
+                }
+                else
+                {
+                    indexTakeFrom = ((pageNumber * RowsPerPage) - RowsPerPage);
+                    indexTakeTo = (indexTakeFrom + RowsPerPage) - 1;
+                }
+
+                for (int i = indexTakeFrom; i <= indexTakeTo; i++)
+                {
+                    if ((newsDataAPIModel.totalResults - 1) < i)
+                    {
+                        break;
+                    }
+                    _results.Add(newsDataAPIModel.results[i]);
+                }
+                newsDataAPIModel.results = _results;
+            }
+
+            return newsDataAPIModel;
         }
 
         public async Task<NewsDataAPIModel> searchNews(string searchTitle)
@@ -47,12 +127,15 @@ namespace web_api.Repository
                     if (cache == null)
                     {
                         string response = await _newsAPI.searchNews(searchTitle);
+                        newsDataAPIModel = JsonConvert.DeserializeObject<NewsDataAPIModel>(response);
+                        newsDataAPIModel.totalResults = newsDataAPIModel.results.Count;
+                        response = JsonConvert.SerializeObject(newsDataAPIModel);
+
                         bool redisStatus = await _redisHelper.SaveValueAsync(searchTitle, response);
                         if (!redisStatus)
                         {
                             throw new Exception("Write to redis Error");
                         }
-                        newsDataAPIModel = JsonConvert.DeserializeObject<NewsDataAPIModel>(response);
                     }
                     else
                     {
@@ -71,6 +154,20 @@ namespace web_api.Repository
             catch (Exception ex)
             {
                 Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+
+            if (newsDataAPIModel.totalResults > 0)
+            {
+                List<NewsDataAPIModel.Results> _results = new List<NewsDataAPIModel.Results>();
+                for (int i = 0; i < newsDataAPIModel.results.Count(); i++)
+                {
+                    _results.Add(newsDataAPIModel.results[i]);
+                    if (i == (RowsPerPage - 1))
+                    {
+                        newsDataAPIModel.results = _results;
+                        break;
+                    }
+                }
             }
             return newsDataAPIModel;
         }

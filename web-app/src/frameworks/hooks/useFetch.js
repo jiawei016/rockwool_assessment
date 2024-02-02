@@ -1,5 +1,13 @@
+import {Observable} from 'rxjs'
+
 export default class UseFetch {
-  FetchGet = async (urlEndpoint) => {
+  FetchGet = (urlEndpoint, params) => {
+    if(params !== null && params !== undefined){
+      for(let i=0; i < params.length; i++){
+        let toReplace = i + "###";
+        urlEndpoint = urlEndpoint.replace(toReplace, params[i]);
+      }
+    }
     try {
       const requestOptions = {
         method: "GET",
@@ -7,40 +15,20 @@ export default class UseFetch {
           "Content-Type": "application/json",
         },
       };
+      return new Observable(observer => {
+        const _promise = new Promise(resolve => {
+          fetch(urlEndpoint, requestOptions)
+          .then(response => {
+            const jsonData = response.json();
+            console.log("FetchGet");
+            console.log(jsonData);
+            resolve(jsonData);
+          })
+          .catch(err => resolve(null))
+        });
+        _promise.then(data => observer.next(data))
+      });
 
-      const response = await fetch(urlEndpoint, requestOptions);
-
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-
-      const jsonData = await response.json();
-    } catch (error) {
-    } finally {
-    }
-  };
-
-  FetchPost = async (urlEndpoint, endPointData) => {
-    let requestData = null
-    if(endPointData != null && endPointData != undefined){
-        requestData = JSON.stringify(endPointData);
-    }
-    try {
-      const requestOptions = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: requestData,
-      };
-
-      const response = await fetch(urlEndpoint,requestOptions);
-
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-
-      const jsonData = await response.json();
     } catch (error) {
     } finally {
     }

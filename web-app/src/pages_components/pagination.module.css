@@ -1,0 +1,15 @@
+.pagination {
+    display: inline-flex;
+    justify-content: center;
+    table-layout: fixed;
+    flex-direction: row;
+}
+
+.paginationPageNumber {
+    background-color: #d1e8e5;
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin: 0.2rem;
+}

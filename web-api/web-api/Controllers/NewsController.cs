@@ -7,7 +7,7 @@ using web_api.Repository.Interfaces;
 namespace web_api.Controllers
 {
     [ApiController]
-    [Route("api/v1/[controller]")]
+    [Route("api/v1/[controller]/[action]")]
     public class NewsController : ControllerBase
     {
         private readonly INewsRepo _newsRepo;
@@ -16,17 +16,17 @@ namespace web_api.Controllers
             _newsRepo = serviceProvider.GetRequiredService<INewsRepo>();
         }
 
-        [HttpPost]
+        [HttpGet]
         public async Task<IActionResult> Search(string newsTitle)
         {
             NewsDataAPIModel searchResponse = await _newsRepo.searchNews(newsTitle);
             return Ok(searchResponse);
         }
 
-        [HttpPost]
+        [HttpGet]
         public async Task<IActionResult> SearchByPagination(string newsTitle, int pageNumber)
         {
-            NewsDataAPIModel searchResponse = await _newsRepo.SearchByPagination(newsTitle, pageNumber);
+            NewsDataAPIModel searchResponse = await _newsRepo.searchByPagination(newsTitle, pageNumber);
             return Ok(searchResponse);
         }
     }
