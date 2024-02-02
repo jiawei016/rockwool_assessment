@@ -15,3 +15,17 @@ export const ApiNewsService = (param) => {
         });
     })
 }
+
+export const ApiNewsSearchByPaginationService = (param) => {
+    console.log(param);
+    return new Observable(observer => {
+        new UseFetch().FetchGet(ApiEndPoint.ApiNewsSearchByPagination, param).subscribe(data => {
+            if(data == null){
+                alert("Network Error");
+            }
+            else{
+                observer.next(data);
+            }
+        });
+    })
+}

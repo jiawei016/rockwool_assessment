@@ -4,12 +4,16 @@ import {
   DefaultLabel,
   DefaultButtonSubmit,
 } from "../../../frameworks/ui_elements/index";
+import { NewsDetail } from './Modals/index'
 import { RefValidation } from "../../../frameworks/validate/refValidation";
 import styles from "../index.module.css";
 
 import { reduxAdd } from "../../../stores/news/newsSlice";
 
-import { ApiNewsService } from "../../../services/apiNewsService";
+import {
+  ApiNewsService,
+  ApiNewsSearchByPaginationService,
+} from "../../../services/apiNewsService";
 import { useDispatch, useSelector } from "react-redux";
 import { PaginationComponent } from "../../../pages_components/pagination";
 
@@ -18,6 +22,8 @@ export const SearchNewsPage = () => {
   const dispatch = useDispatch();
   const _newsState = useSelector((state) => state.newsState);
   const [param, setParam] = useState([]);
+  const [newsDetailShow, setNewsDetailShow] = useState(false);
+  const [newsDetail, setNewsDetail] = useState(null);
 
   const onSearchEvent = () => {
     let param = [];
@@ -33,11 +39,19 @@ export const SearchNewsPage = () => {
   };
 
   const onPaginationClickEvent = (pageNumber) => {
-    ApiNewsService(param).subscribe((data) => {
+    let _paramJson = JSON.stringify(param);
+    let _paramObj = JSON.parse(_paramJson);
+    _paramObj.push(pageNumber);
+    ApiNewsSearchByPaginationService(_paramObj).subscribe((data) => {
       dispatch(reduxAdd(data, data.totalResults));
     });
   };
 
+  const onNewsDetailClickHandler = (newsObj) => {
+    setNewsDetail(newsObj);
+    setNewsDetailShow(true);
+  }
+  
   return (
     <>
       <div className={"mb-3 " + styles.Card}>
@@ -54,12 +68,21 @@ export const SearchNewsPage = () => {
         />
       </div>
 
+      {_newsState.newsData.totalResults > 0 ? (
+        <PaginationComponent
+          paginationClickEvent={(e) => onPaginationClickEvent(e)}
+          records={_newsState.newsData.totalResults}
+        />
+      ) : (
+        <></>
+      )}
+
       {_newsState.newsData.results.map((obj, index) => (
-        <div className="card mt-4 mb-4" key={"newsCard-" + index}>
+        <div className="card mt-4 mb-4" key={"newsCard-" + index} onClick={() => onNewsDetailClickHandler(obj)}>
           <div className={styles.ribbon}>{obj.category[0]}</div>
           <div className="card-body">
             <h5 className={"card-title mt-3 " + styles.cardTitle}>
-              {obj.title}
+              {obj.title.substring(0, 30) + "..."}
             </h5>
           </div>
           <div className="card-body">
@@ -72,10 +95,7 @@ export const SearchNewsPage = () => {
         </div>
       ))}
 
-      <PaginationComponent
-        paginationClickEvent={(e) => onPaginationClickEvent(e)}
-        records={_newsState.newsData.totalResults}
-      />
+      <NewsDetail show={newsDetailShow} handle_close={() => setNewsDetailShow(false)} detail={newsDetail} />
     </>
   );
 };
