@@ -23,9 +23,10 @@ export default class UseFetch {
             console.log("FetchGet");
             console.log(jsonData);
             resolve(jsonData);
-          });
+          })
+          .catch(err => resolve(null))
         });
-        _promise.then(data => observer.next(data));
+        _promise.then(data => observer.next(data))
       });
 
     } catch (error) {

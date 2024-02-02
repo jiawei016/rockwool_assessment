@@ -3,19 +3,19 @@ import { createSlice } from "@reduxjs/toolkit";
 const newsSlice = createSlice({
     name: "news",
     initialState: {
-        newsList: [],
+        newsData: {
+            "status": "",
+            "totalResults": 0,
+            "results": []
+        },
     },
     reducers: {
-        add(state, action){
-            const updatedTaskList = state.taskList.concat(action.payload);
-            return {...state, taskList: updatedTaskList};
-        },
-        remove(state, action){
-            const updatedTaskList = state.taskList.filter(item => item.TaskName !== action.payload.TaskName);
-            return {...state, taskList: updatedTaskList};
+        reduxAdd(state, action){
+            console.log(action);
+            return {...state, newsData: action.payload};
         }
     }
 });
 
-export const { add, remove } = newsSlice.actions;
+export const { reduxAdd } = newsSlice.actions;
 export const newsReducer = newsSlice.reducer;

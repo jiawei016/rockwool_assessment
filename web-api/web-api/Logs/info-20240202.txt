@@ -1,0 +1,52 @@
+2024-02-02 01:14:32.972 +08:00 [INF] ProcessID : 23bfb1e8-b9a7-4ddb-a517-10291f216091 --- Write Into spInsertSearchHistory
+2024-02-02 01:14:33.207 +08:00 [INF] ProcessID : 23bfb1e8-b9a7-4ddb-a517-10291f216091 --- Get from redis on key pizza
+2024-02-02 01:14:38.641 +08:00 [INF] ProcessID : 23bfb1e8-b9a7-4ddb-a517-10291f216091 --- Set to redis on key pizza
+2024-02-02 01:19:02.231 +08:00 [INF] ProcessID : 31b05516-986d-4b14-80bd-5122fe6b8484 --- Get from redis on key pizza
+2024-02-02 01:22:05.297 +08:00 [INF] ProcessID : d69732f8-1344-4fa9-bcf1-ce2cb52cd880 --- Get from redis on key pizza
+2024-02-02 01:22:59.941 +08:00 [INF] ProcessID : c1b67cc3-4241-4c21-b936-6575d0cdec06 --- Get from redis on key pizza
+2024-02-02 01:24:08.398 +08:00 [INF] ProcessID : f5d8bfba-6219-4fb0-9384-3ae6a90056e3 --- Get from redis on key pizza
+2024-02-02 01:25:27.242 +08:00 [INF] ProcessID : 7103034c-9503-419a-b9e2-67186ee37559 --- Get from redis on key pizza
+2024-02-02 01:26:36.617 +08:00 [INF] ProcessID : 4de83148-61af-4bb3-a779-9aaf8692bb89 --- Get from redis on key pizza
+2024-02-02 01:30:39.288 +08:00 [INF] ProcessID : 57300ba2-f526-4b35-99a3-68564f0a91fb --- Get from redis on key pizza
+2024-02-02 01:33:49.968 +08:00 [INF] ProcessID : 8ceaf8a9-2dc4-4a52-bd1a-0c341b93f570 --- Get from redis on key pizza
+2024-02-02 01:35:15.171 +08:00 [INF] ProcessID : 0901ff9b-3dd4-4982-a73e-8d8f5c211a54 --- Get from redis on key pizza
+2024-02-02 01:35:45.094 +08:00 [INF] ProcessID : c3fd027d-59e2-4046-8565-014c1c0f406a --- Get from redis on key pizza
+2024-02-02 01:39:55.833 +08:00 [INF] ProcessID : 130236b8-c347-43d0-a237-95a6c2465ddd --- Get from redis on key pizza
+2024-02-02 01:40:19.664 +08:00 [INF] ProcessID : c504a25d-2422-49c3-b622-0b9489c3bc1c --- Get from redis on key pizza
+2024-02-02 01:40:37.935 +08:00 [INF] ProcessID : b554f106-6b55-46cd-91e8-80da86d2fe31 --- Get from redis on key pizza
+2024-02-02 01:41:40.744 +08:00 [INF] ProcessID : a69c323d-8e7c-4b87-a63d-99f4cd4d828f --- Get from redis on key pizza
+2024-02-02 01:42:49.136 +08:00 [INF] ProcessID : e37a2d0d-e347-49ae-ad42-c5df977a84ad --- Get from redis on key pizza
+2024-02-02 03:09:32.964 +08:00 [INF] ProcessID : 14327f6a-256e-45f4-9cba-ce61ceeda5f2 --- Write Into spInsertSearchHistory
+2024-02-02 03:09:33.359 +08:00 [INF] ProcessID : 14327f6a-256e-45f4-9cba-ce61ceeda5f2 --- Get from redis on key pizza
+2024-02-02 03:13:18.414 +08:00 [INF] ProcessID : 39db3cb8-21d0-4480-9913-0fd6ad9c1a77 --- Write Into spInsertSearchHistory
+2024-02-02 03:13:18.444 +08:00 [INF] ProcessID : 39db3cb8-21d0-4480-9913-0fd6ad9c1a77 --- Get from redis on key pizza
+2024-02-02 08:27:33.113 +08:00 [INF] ProcessID : 5621fb0b-2ee0-4deb-a809-6e6123a75bb3 --- Write Into spInsertSearchHistory
+2024-02-02 08:27:33.154 +08:00 [INF] ProcessID : 5621fb0b-2ee0-4deb-a809-6e6123a75bb3 --- Get from redis on key pizza
+2024-02-02 08:27:40.383 +08:00 [INF] ProcessID : 5621fb0b-2ee0-4deb-a809-6e6123a75bb3 --- Set to redis on key pizza
+2024-02-02 08:30:58.766 +08:00 [INF] ProcessID : 4f24ab6c-fa21-47a2-b854-925e0bfafe6b --- Write Into spInsertSearchHistory
+2024-02-02 08:30:58.789 +08:00 [INF] ProcessID : 4f24ab6c-fa21-47a2-b854-925e0bfafe6b --- Get from redis on key pizza
+2024-02-02 08:52:14.341 +08:00 [INF] ProcessID : 81fecbd7-dc35-4841-b99c-567a83a84e23 --- Write Into spInsertSearchHistory
+2024-02-02 08:52:14.503 +08:00 [INF] ProcessID : 81fecbd7-dc35-4841-b99c-567a83a84e23 --- Get from redis on key pizza
+2024-02-02 08:54:14.186 +08:00 [INF] ProcessID : 2f91ea56-0581-4b87-a031-8289b0b616f1 --- Write Into spInsertSearchHistory
+2024-02-02 08:54:14.201 +08:00 [INF] ProcessID : 2f91ea56-0581-4b87-a031-8289b0b616f1 --- Get from redis on key pizza
+2024-02-02 08:56:54.114 +08:00 [INF] ProcessID : ba3accdf-260d-4745-9240-b426302e189d --- Write Into spInsertSearchHistory
+2024-02-02 08:56:54.146 +08:00 [INF] ProcessID : ba3accdf-260d-4745-9240-b426302e189d --- Get from redis on key pizza
+2024-02-02 08:57:42.043 +08:00 [INF] ProcessID : c612a5cc-9df1-465c-a5ed-8f8a3cc6c8bc --- Write Into spInsertSearchHistory
+2024-02-02 08:57:42.066 +08:00 [INF] ProcessID : c612a5cc-9df1-465c-a5ed-8f8a3cc6c8bc --- Get from redis on key pizza
+2024-02-02 09:31:25.125 +08:00 [INF] ProcessID : 809df09b-2a80-4f99-a755-d807dce4175c --- Write Into spInsertSearchHistory
+2024-02-02 09:31:25.148 +08:00 [INF] ProcessID : 809df09b-2a80-4f99-a755-d807dce4175c --- Get from redis on key 0
+2024-02-02 09:31:32.020 +08:00 [INF] ProcessID : 809df09b-2a80-4f99-a755-d807dce4175c --- Set to redis on key 0
+2024-02-02 09:31:51.966 +08:00 [INF] ProcessID : d9845a2d-f492-4ffe-9f82-9c89b7b0f947 --- Write Into spInsertSearchHistory
+2024-02-02 09:31:51.974 +08:00 [INF] ProcessID : d9845a2d-f492-4ffe-9f82-9c89b7b0f947 --- Get from redis on key pizza
+2024-02-02 09:31:54.298 +08:00 [INF] ProcessID : f09ebcec-2108-4517-baa4-ab8a1229caff --- Write Into spInsertSearchHistory
+2024-02-02 09:31:54.308 +08:00 [INF] ProcessID : f09ebcec-2108-4517-baa4-ab8a1229caff --- Get from redis on key pizza
+2024-02-02 09:31:55.017 +08:00 [INF] ProcessID : 7f69dae4-f57c-4cd5-bc57-a22eefabaac4 --- Write Into spInsertSearchHistory
+2024-02-02 09:31:55.024 +08:00 [INF] ProcessID : 7f69dae4-f57c-4cd5-bc57-a22eefabaac4 --- Get from redis on key pizza
+2024-02-02 09:32:00.073 +08:00 [INF] ProcessID : 5c0c5af1-5a4e-4afa-85bf-e8b9c7182677 --- Write Into spInsertSearchHistory
+2024-02-02 09:32:00.082 +08:00 [INF] ProcessID : 5c0c5af1-5a4e-4afa-85bf-e8b9c7182677 --- Get from redis on key pizza
+2024-02-02 09:32:00.675 +08:00 [INF] ProcessID : 7691c644-d79a-43f2-b45a-021db47a3e22 --- Write Into spInsertSearchHistory
+2024-02-02 09:32:00.683 +08:00 [INF] ProcessID : 7691c644-d79a-43f2-b45a-021db47a3e22 --- Get from redis on key pizza
+2024-02-02 09:32:00.922 +08:00 [INF] ProcessID : 0bee579b-ba45-4bf9-afd3-8939f9d32764 --- Write Into spInsertSearchHistory
+2024-02-02 09:32:00.931 +08:00 [INF] ProcessID : 0bee579b-ba45-4bf9-afd3-8939f9d32764 --- Get from redis on key pizza
+2024-02-02 09:32:14.400 +08:00 [INF] ProcessID : fc9804a3-a8ef-4e75-b765-9c0cf97e78a8 --- Write Into spInsertSearchHistory
+2024-02-02 09:32:14.407 +08:00 [INF] ProcessID : fc9804a3-a8ef-4e75-b765-9c0cf97e78a8 --- Get from redis on key pizza

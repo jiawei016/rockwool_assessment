@@ -6,3 +6,31 @@
     align-content: space-between;
     align-items: flex-end;
 }
+
+.cardTitle {
+    font-size: 4vw !important;
+}
+
+.CardImage {
+    width: 100%;
+}
+
+.ribbon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-bottom-left-radius: 50%;
+    z-index: 1;
+}
+/* 
+.ribbon::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: -10px;
+    border: 10px solid transparent;
+    border-top-color: #007bff;
+} */
