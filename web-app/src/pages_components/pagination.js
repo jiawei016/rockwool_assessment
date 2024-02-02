@@ -32,12 +32,18 @@ export function PaginationComponent(props) {
         }
     }
 
+    const pageNumberClick = (page) => {
+        console.log(page);
+        props.paginationClickEvent(page);
+        setPageNumber(page);
+    }
+
     return (
         <div className={styles.pagination}>
             <DefaultButtonFontAwesome icon_name={"bi-arrow-left-short"} class_name={styles.paginationPageNumber} button_clickEvent={() => prevClick()} />
             {
                 pagingArry.map((page, index) => {
-                    return <DefaultButtonSubmit button_text={page} class_name={styles.paginationPageNumber} button_clickEvent={() => console.log('')} key={index} />
+                    return <DefaultButtonSubmit button_text={page} class_name={styles.paginationPageNumber} button_clickEvent={() => pageNumberClick(page)} key={index} />
                 })
             }
             <DefaultButtonFontAwesome icon_name={"bi-arrow-right-short"} class_name={styles.paginationPageNumber} button_clickEvent={() => forwardClick()} />

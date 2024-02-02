@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = thirdparty_api
-build_property.ProjectDir = C:\Personal\Projects\rockwool_assessment\web-api\thirdparty-api\
+build_property.ProjectDir = C:\Personal\Projects\rockwool_assessment1\web-api\thirdparty-api\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
